@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6632a8af-5980-45b1-8e3c-6249d24f3f46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/loginsignup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/nbproject.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/post.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/signup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/signup_result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/noahboard/db.sqlite3" afterPath="$PROJECT_DIR$/noahboard/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/noahboard/settings.py" afterPath="$PROJECT_DIR$/noahboard/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/urls.py" afterPath="$PROJECT_DIR$/nb_webapp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/views.py" afterPath="$PROJECT_DIR$/nb_webapp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/admin.py" afterPath="$PROJECT_DIR$/nb_webapp/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/models.py" afterPath="$PROJECT_DIR$/nb_webapp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nbproject.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381212759221" ignored="false" />
+    <file path="/Dummy.txt" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381259713144" ignored="false" />
     <file path="/login.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381205186442" ignored="false" />
     <file path="/post.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381204347499" ignored="false" />
     <file path="/settings.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381205319867" ignored="false" />
@@ -30,6 +17,8 @@
     <file path="/views.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381213790907" ignored="false" />
     <file path="/loginsignup.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381207811031" ignored="false" />
     <file path="/signup_result.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381213502454" ignored="false" />
+    <file path="/admin.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381252734435" ignored="false" />
+    <file path="/models.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381261089536" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,31 +37,70 @@
     <favorites_list name="nbproject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="32" selection-start="3609" selection-end="3609" vertical-scroll-proportion="0.72270745">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-                <element signature="e#380#1206#0" expanded="false" />
-                <element signature="e#1233#1390#0" expanded="false" />
-                <element signature="e#1660#2136#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup_result.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Temp/signup_result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="25" selection-start="104" selection-end="104" vertical-scroll-proportion="-4.071429">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.2988764">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="admin.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/nb_webapp/admin.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/noahboard/settings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="103" column="12" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/noahboard/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="32" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="94" column="21" selection-start="3375" selection-end="3375" vertical-scroll-proportion="0.04269663">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -98,6 +126,8 @@
         <option value="$PROJECT_DIR$/nb_webapp/urls.py" />
         <option value="$PROJECT_DIR$/templates/Temp/signup_result.html" />
         <option value="$PROJECT_DIR$/nb_webapp/views.py" />
+        <option value="$PROJECT_DIR$/nb_webapp/admin.py" />
+        <option value="$PROJECT_DIR$/nb_webapp/models.py" />
       </list>
     </option>
   </component>
@@ -133,7 +163,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,17 +243,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/mysite" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -252,29 +282,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="nbproject" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -296,6 +303,29 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="nbproject" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -359,18 +389,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25032175" sideWeight="0.67128986" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25997427" sideWeight="0.67128986" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3991655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32871014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -462,22 +492,12 @@
         <state line="23" column="0" selection-start="719" selection-end="720" vertical-scroll-proportion="0.7916667" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nb_webapp/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="96" selection-end="96" vertical-scroll-proportion="0.16666667" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Temp/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nb_webapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/noahboard/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
@@ -492,52 +512,53 @@
         <state line="8" column="7" selection-start="81" selection-end="81" vertical-scroll-proportion="0.35514018" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/noahboard/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.04288939">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nb_webapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="70" selection-start="758" selection-end="758" vertical-scroll-proportion="0.55756205">
-          <folding>
-            <element signature="e#28#70#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="13" column="70" selection-start="758" selection-end="758" vertical-scroll-proportion="0.55756205" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Temp/loginsignup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="0.029051987">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="5" selection-start="608" selection-end="608" vertical-scroll-proportion="0.7685393">
-          <folding />
-        </state>
+        <state line="1" column="6" selection-start="22" selection-end="22" vertical-scroll-proportion="0.029051987" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Temp/signup_result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="104" selection-end="104" vertical-scroll-proportion="-4.071429">
+        <state line="6" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="0.17091455" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nb_webapp/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noahboard/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="12" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noahboard/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="32" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="32" selection-start="3609" selection-end="3609" vertical-scroll-proportion="0.72270745">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#380#1206#0" expanded="false" />
-            <element signature="e#1233#1390#0" expanded="false" />
-            <element signature="e#1660#2136#0" expanded="false" />
-          </folding>
+        <state line="14" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.2988764">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="21" selection-start="3375" selection-end="3375" vertical-scroll-proportion="0.04269663">
+          <folding />
         </state>
       </provider>
     </entry>

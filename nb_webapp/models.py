@@ -8,32 +8,43 @@ class BasicInfo(models.Model):
     account_email= models.EmailField()
     account_type = models.CharField(max_length=1)
     password = models.CharField(max_length=100)
-    linkedin_member_id=models.CharField(max_length=20)
-    facebook_member_id=models.CharField(max_length=20)
-    website = models.URLField()
+    linkedin_member_id=models.CharField(max_length=20, blank=True)
+    facebook_member_id=models.CharField(max_length=20, blank=True)
+    website = models.URLField(blank=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
     )
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     #work is different form the db design
-    about_me = models.CharField(max_length=300)
+    about_me = models.CharField(max_length=300, blank=True)
     ACCESS_RIGHTS = (
         ('PUB', 'Public'),
         ('PRI', 'Private')
     )
-    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS)
+    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS, blank=True)
+
+    def __unicode__(self):
+        name = [self.first_name, self.last_name]
+        return ' '.join(p for p in name)
+
 
 # WorkInfo Table
 class WorkInfo(models.Model):
     basic_info = models.ForeignKey(BasicInfo)
     company_name = models.CharField(max_length=100)
-    description = models.CharField(max_length=300)
-    position = models.CharField(max_length=30)
-    start_date = models.DateField()
-    end_date = models.DateField()
+    description = models.CharField(max_length=300,blank=True)
+    position = models.CharField(max_length=30, blank=True)
+    start_date = models.DateField(blank=True)
+    end_date = models.DateField(blank=True)
+
+    def __unicode__(self):
+        p = BasicInfo.objects.get(user_id = self.basic_info_id)
+        name = [p.first_name, p.last_name]
+        return ' '.join(q for q in name)
+
 
 # KnowledgeProfile Table
 class KnowledgeProfile(models.Model):
@@ -52,10 +63,16 @@ class KnowledgeProfile(models.Model):
     access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS)
     # knowledge_board = models.OneToOneField(KnowledgeBoard)
 
+    def __unicode__(self):
+        p = BasicInfo.objects.get(user_id = self.basic_info_id)
+        name = [p.first_name, p.last_name]
+        return ' '.join(q for q in name)
+
 # KnowledgeBoard
 # class KnowledgeBoard(models.Model):
 #    def __unicode__(self):
 #        return ""
+
 
 # KnowledgeCard Table
 class KnowledgeCard(models.Model):
@@ -96,11 +113,14 @@ class KnowledgeCard(models.Model):
     )
     access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS)
 
+    def __unicode__(self):
+        return self.title
 #UserProfile
 #class UserProfile(models.Model):
 #    basic_info = models.OneToOneField(BasicInfo)
 #    followers = models.ManyToManyField(BasicInfo,related_name="followers_basic_info")
 #    knowledge_profile = models.OneToOneField(KnowledgeProfile)
+
 
 # CommentInfo Table
 class CommentInfo(models.Model):
@@ -111,15 +131,22 @@ class CommentInfo(models.Model):
     post_date = models.DateField()
     num_upvotes = models.PositiveIntegerField()
 
+    def __unicode__(self):
+        p = KnowledgeCard.objects.get(card_id = self.knowledge_card_id)
+        return p.title
+
+
 # FollowerInfo Table
 class FollowerInfo(models.Model):
     basic_info = models.ForeignKey(BasicInfo, related_name='+')
     follower_info = models.ForeignKey(BasicInfo, related_name='+')
 
+
 # FollowingInfo Table
 class FollowingInfo(models.Model):
     basic_info = models.ForeignKey(BasicInfo, related_name='+')
     following_info = models.ForeignKey(BasicInfo, related_name='+')
+
 
 # RepostInfo Table
 class RepostInfo(models.Model):
