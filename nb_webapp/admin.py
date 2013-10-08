@@ -1,4 +1,4 @@
-__author__ = 'jinguangzhou'
+__author__ = 'chenglu'
 from django.contrib import admin
 from nb_webapp.models import *
 

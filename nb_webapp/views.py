@@ -8,7 +8,7 @@ from django.views import generic
 from nb_webapp.models import *
 #import oauth2 as oauth
 
-def flowingInfo(request):
+def home(request):
     loginID = 2           #    according to login
 
     CardsDict = {}#all information
@@ -28,7 +28,7 @@ def flowingInfo(request):
         CardsDict[nID] = CardsList#CardsInformation
         FollowingDict[nID] = BasicInfo.objects.get(user_id=nID)#folowingIntomation
 
-    return render(request, 'Temp/informationFormFriends.html',
+    return render(request, 'Temp/homepage.html',
                   {'CardsDict': CardsDict,'FollowingDict': FollowingDict,
                    'FollowingIDList': FollowingIDList})
 
@@ -85,20 +85,47 @@ def getLinkedinData(linkedin_id):
     basicInfo.save()
     print content
 
-def loginsignup(request):
-    return render(request, 'Temp/loginsignup.html')
+def welcome(request):
+    return render(request, 'Temp/welcome.html')
 
-def login(request):
-    return True
 
 def signup(request):
     post_account_email = request.POST['account_email']
     post_password = request.POST['password']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    if post_account_email == '' or post_password == '' or first_name == '' or last_name == '':
+        error_message = "Please fill in all the forms."
+        return render(request, "Temp/welcome.html", {'error_message': error_message})
     # Check for existence
     if BasicInfo.objects.filter(account_email = post_account_email).exists():
-        message = "User already exists!"
+        error_message = "User already exists!"
+        return render(request, "Temp/welcome.html", {'error_message': error_message})
     else:
-        q = BasicInfo(account_email = post_account_email, password = post_password)
-        q.save()
+        # Create a BasicInfo entry
+        qB = BasicInfo(account_email = post_account_email, password = post_password)
+        qB.save()
+        qK = KnowledgeProfile(basic_info = qB, num_flowers = 0, num_posts = 0, num_tags = 0, num_thumbs = 0, num_followings = 0, num_followers = 0)
+        qK.save()
         message = "Sign up successfully!"
-    return HttpResponse(message)
+        return HttpResponseRedirect(reverse('nb_webapp:home'))
+
+
+def login(request):
+    post_account_email = request.POST['account_email']
+    post_password = request.POST['password']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    if post_account_email == '' or post_password == '':
+        error_message = "Please fill in the account and the password."
+        return render(request, "Temp/welcome.html", {'error_message': error_message})
+    # Check for existence of the account
+    try:
+        user = BasicInfo.objects.get(account_email = post_account_email)
+    except BasicInfo.DoesNotExist:
+        error_message = "Account does not exist!"
+        return render(request, "Temp/welcome.html", {'error_message': error_message})
+    if user.password != post_password:
+        error_message = "Password error!"
+        return render(request, "Temp/welcome.html", {'error_message': error_message})
+    return HttpResponseRedirect(reverse('nb_webapp:home'))

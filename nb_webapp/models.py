@@ -49,7 +49,7 @@ class WorkInfo(models.Model):
 # KnowledgeProfile Table
 class KnowledgeProfile(models.Model):
     basic_info = models.ForeignKey(BasicInfo)
-    interests = models.CharField(max_length=50)
+    interests = models.CharField(max_length=50, blank=True)
     num_flowers = models.PositiveIntegerField()
     num_posts = models.PositiveIntegerField()
     num_tags = models.PositiveIntegerField()
@@ -60,7 +60,7 @@ class KnowledgeProfile(models.Model):
         ('PUB', 'Public'),
         ('PRI', 'Private'),
     )
-    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS)
+    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS, blank=True)
     # knowledge_board = models.OneToOneField(KnowledgeBoard)
 
     def __unicode__(self):
