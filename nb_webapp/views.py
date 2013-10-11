@@ -1,36 +1,42 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.template import RequestContext, loader
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.views import generic
 from nb_webapp.models import *
+from django.core.context_processors import csrf
+from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
+
 #import oauth2 as oauth
 
 def home(request):
-    loginID = 2           #    according to login
+    # Fetch the user's information from request.user
+    #print(request.user.username)
+    user = BasicInfo.objects.get(user=request.user)
+    #print(user)
+    card_list_dict = {} # Dictionary for user_id-card_list mapping
+    following_id_list = []
+    following_dict = {} # Dictionary for user_id-basic_info mapping
 
-    CardsDict = {}#all information
-    FollowingIDList = []
-    FollowingDict = {}
-    CardsList = []#Cards Information
-
-    flowingList = FollowingInfo.objects.filter(basic_info_id=loginID)
-    for nFlowing in flowingList:
-        nID = nFlowing.following_info_id
-        FollowingIDList.append(nID)
-        cards = KnowledgeCard.objects.filter(basic_info_id=nID)
-        CardsList = []
+    following_list = FollowingInfo.objects.filter(basic_info_id=user.user_id)
+    for following_user in following_list:
+        following_user_id = following_user.following_info_id
+        following_id_list.append(following_user_id)
+        cards = KnowledgeCard.objects.filter(basic_info_id=following_user_id)
+        card_list = []
         for card in cards:
-            CardsList.append(card)
-
-        CardsDict[nID] = CardsList#CardsInformation
-        FollowingDict[nID] = BasicInfo.objects.get(user_id=nID)#folowingIntomation
+            card_list.append(card)
+        card_list_dict[following_user_id] = card_list # Cards information
+        following_dict[following_user_id] = BasicInfo.objects.get(user_id = following_user_id) # Following user information
 
     return render(request, 'Temp/homepage.html',
-                  {'CardsDict': CardsDict,'FollowingDict': FollowingDict,
-                   'FollowingIDList': FollowingIDList})
+                  {'CardsDict': card_list_dict,'FollowingDict': following_dict,
+                   'FollowingIDList': following_id_list, 'user': user})
 
 
 def hello(request):
@@ -85,47 +91,72 @@ def getLinkedinData(linkedin_id):
     basicInfo.save()
     print content
 
+
 def welcome(request):
     return render(request, 'Temp/welcome.html')
 
 
-def signup(request):
+def page_signup(request):
+    return render(request, 'Temp/signup.html')
+
+
+def nb_signup(request): # Use the django authentication tool
+    try:
+        signup = request.POST['signup']
+    except MultiValueDictKeyError:
+        return render(request, "Temp/welcome.html")
     post_account_email = request.POST['account_email']
     post_password = request.POST['password']
+    post_re_password = request.POST['re_password']
     first_name = request.POST['first_name']
     last_name = request.POST['last_name']
-    if post_account_email == '' or post_password == '' or first_name == '' or last_name == '':
+    if post_account_email == '' or post_password == '' or post_re_password == '' or first_name == '' or last_name == '':
         error_message = "Please fill in all the forms."
-        return render(request, "Temp/welcome.html", {'error_message': error_message})
+        return render(request, "Temp/signup.html", {'error_message': error_message})
+    if post_password != post_re_password:
+        error_message = "Password mismatch!"
+        return render(request, "Temp/signup.html", {'error_message': error_message})
     # Check for existence
-    if BasicInfo.objects.filter(account_email = post_account_email).exists():
+    if User.objects.filter(username=post_account_email).exists():
         error_message = "User already exists!"
-        return render(request, "Temp/welcome.html", {'error_message': error_message})
+        return render(request, "Temp/signup.html", {'error_message': error_message})
     else:
         # Create a BasicInfo entry
-        qB = BasicInfo(account_email = post_account_email, password = post_password)
+        new_user = User.objects.create_user(post_account_email, post_account_email, post_password)
+        new_user.first_name = first_name
+        new_user.last_name = last_name
+        new_user.save()
+        qB = BasicInfo(user=new_user)
         qB.save()
-        qK = KnowledgeProfile(basic_info = qB, num_flowers = 0, num_posts = 0, num_tags = 0, num_thumbs = 0, num_followings = 0, num_followers = 0)
+        # Initialize the user's knowledge profile
+        qK = KnowledgeProfile(basic_info=qB, num_flowers=0, num_posts=0, num_tags=0, num_thumbs=0, num_followings=0, num_followers=0)
         qK.save()
-        message = "Sign up successfully!"
-        return HttpResponseRedirect(reverse('nb_webapp:home'))
+        return HttpResponseRedirect(reverse('nb_webapp:welcome'))
 
 
-def login(request):
+def nb_login(request): # Use the django authentication tool
     post_account_email = request.POST['account_email']
     post_password = request.POST['password']
-    first_name = request.POST['first_name']
-    last_name = request.POST['last_name']
     if post_account_email == '' or post_password == '':
         error_message = "Please fill in the account and the password."
         return render(request, "Temp/welcome.html", {'error_message': error_message})
     # Check for existence of the account
-    try:
-        user = BasicInfo.objects.get(account_email = post_account_email)
-    except BasicInfo.DoesNotExist:
-        error_message = "Account does not exist!"
+    #try:
+    #    user = BasicInfo.objects.get(account_email = post_account_email)
+    #except BasicInfo.DoesNotExist:
+    #    error_message = "Account does not exist!"
+    #    return render(request, "Temp/welcome.html", {'error_message': error_message})
+    #if user.password != post_password:
+    #    error_message = "Password error!"
+    #    return render(request, "Temp/welcome.html", {'error_message': error_message})
+    user = authenticate(username = post_account_email, password = post_password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return HttpResponseRedirect(reverse('nb_webapp:home'))
+        else:
+            error_message = "Account disabled!"
+            return render(request, "Temp/welcome.html", {'error_message': error_message})
+    else:
+        error_message = "Wrong account information!"
         return render(request, "Temp/welcome.html", {'error_message': error_message})
-    if user.password != post_password:
-        error_message = "Password error!"
-        return render(request, "Temp/welcome.html", {'error_message': error_message})
-    return HttpResponseRedirect(reverse('nb_webapp:home'))

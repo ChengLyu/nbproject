@@ -1,23 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 # BasicInfo Table
 class BasicInfo(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    account_email= models.EmailField()
-    account_type = models.CharField(max_length=1)
-    password = models.CharField(max_length=100)
-    linkedin_member_id=models.CharField(max_length=20, blank=True)
-    facebook_member_id=models.CharField(max_length=20, blank=True)
-    website = models.URLField(blank=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=40)
+    #user_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, primary_key=True)
+    #account_email= models.EmailField()
+    #password = models.CharField(max_length=100)
+    #first_name = models.CharField(max_length=30)
+    #last_name = models.CharField(max_length=40)
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+    account_type = models.CharField(max_length=1)
+    linkedin_member_id=models.CharField(max_length=20, blank=True)
+    facebook_member_id=models.CharField(max_length=20, blank=True)
+    website = models.URLField(blank=True)
     #work is different form the db design
     about_me = models.CharField(max_length=300, blank=True)
     ACCESS_RIGHTS = (
@@ -27,7 +29,7 @@ class BasicInfo(models.Model):
     access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS, blank=True)
 
     def __unicode__(self):
-        name = [self.first_name, self.last_name]
+        name = [self.user.first_name, self.user.last_name]
         return ' '.join(p for p in name)
 
 
@@ -41,8 +43,8 @@ class WorkInfo(models.Model):
     end_date = models.DateField(blank=True)
 
     def __unicode__(self):
-        p = BasicInfo.objects.get(user_id = self.basic_info_id)
-        name = [p.first_name, p.last_name]
+        p = BasicInfo.objects.get(user__pk = self.basic_info_id)
+        name = [p.user.first_name, p.user.last_name]
         return ' '.join(q for q in name)
 
 
@@ -64,8 +66,8 @@ class KnowledgeProfile(models.Model):
     # knowledge_board = models.OneToOneField(KnowledgeBoard)
 
     def __unicode__(self):
-        p = BasicInfo.objects.get(user_id = self.basic_info_id)
-        name = [p.first_name, p.last_name]
+        p = BasicInfo.objects.get(user__pk = self.basic_info_id)
+        name = [p.user.first_name, p.user.last_name]
         return ' '.join(q for q in name)
 
 # KnowledgeBoard
@@ -83,8 +85,8 @@ class KnowledgeCard(models.Model):
     #need to verify max chars
     contents = models.CharField(max_length=150)
     # picture = models.ImageField(upload_to='/Users/jinguangzhou/git/NoahBoard/images')
-    video_link = models.URLField()
-    source_link = models.URLField()
+    video_link = models.URLField(blank=True)
+    source_link = models.URLField(blank=True)
     CATEGORIES = (
         ('MI', 'Mobile & Internet industry'),
         ('BE', 'Business & Entrepreneur'),
@@ -101,7 +103,7 @@ class KnowledgeCard(models.Model):
     #    ('JAVA', 'Java'),
     #    ('Python', 'Python'),
     #)
-    tags = models.CharField(max_length=50)
+    tags = models.CharField(max_length=50, blank=True)
     post_date = models.DateField()
     num_thumbs = models.PositiveIntegerField()
     num_reposts = models.PositiveIntegerField()
@@ -111,7 +113,7 @@ class KnowledgeCard(models.Model):
         ('PUB', 'Public'),
         ('PRI', 'Private'),
     )
-    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS)
+    access_rights = models.CharField(max_length=3, choices=ACCESS_RIGHTS, blank=True)
 
     def __unicode__(self):
         return self.title
@@ -124,8 +126,8 @@ class KnowledgeCard(models.Model):
 
 # CommentInfo Table
 class CommentInfo(models.Model):
+    comment_id = models.AutoField(primary_key=True)
     knowledge_card = models.ForeignKey(KnowledgeCard)
-    comment_index = models.PositiveIntegerField()
     commentator_id = models.ForeignKey(BasicInfo)
     contents = models.CharField(max_length=100)
     post_date = models.DateField()
@@ -150,6 +152,6 @@ class FollowingInfo(models.Model):
 
 # RepostInfo Table
 class RepostInfo(models.Model):
-    knowledge_card = models.ForeignKey('KnowledgeCard')
-    sharer_info = models.ForeignKey('BasicInfo')
+    knowledge_card = models.ForeignKey(KnowledgeCard)
+    sharer_info = models.ForeignKey(BasicInfo)
     share_type = models.BooleanField() # True: reposts, False: share

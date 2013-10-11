@@ -4,6 +4,7 @@
     <title>Personal Homepage</title>
 </head>
 <body>
+<p>Hi, {{ user.user.first_name }} {{ user.user.last_name }}, Welcome to NoahBase!</p>
 Latest Feeds:<br>
 <ul>
     {% for key,value in FollowingDict.items %}

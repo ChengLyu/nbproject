@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NoahsBase Sign Up</title>
+</head>
+<body>
+    <div align = "center">Welcome to NoahsBase</div>
+    <form action = "{% url 'nb_webapp:signup' %}" method = "post">
+    {% csrf_token %}
+        <p>Email Address: <input type="text" name="account_email"/></p>
+        <p>Password: <input type = "password" name="password"/></p>
+        <p>Re-enter Password: <input type = "password" name = "re_password"/></p>
+        <p>First Name: <input type = "text" name = "first_name"/></p>
+        <p>Last Name: <input type = "text" name = "last_name"/></p>
+        <input type="submit" name="signup" value = "signup"/>
+        <input type="submit" name="cancel" value = "cancel"/>
+    </form>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+</body>
+</html>
