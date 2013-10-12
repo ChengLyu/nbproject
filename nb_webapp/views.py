@@ -11,7 +11,6 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-
 #import oauth2 as oauth
 
 def home(request):
@@ -131,8 +130,11 @@ def nb_signup(request): # Use the django authentication tool
         # Initialize the user's knowledge profile
         qK = KnowledgeProfile(basic_info=qB, num_flowers=0, num_posts=0, num_tags=0, num_thumbs=0, num_followings=0, num_followers=0)
         qK.save()
-        return HttpResponseRedirect(reverse('nb_webapp:welcome'))
-
+        success_message = "Sign up successfully!"
+#        template = loader.get_template('Temp/welcome.html')
+ #       context = RequestContext(request, {'success_message': success_message})
+        #return HttpResponseRedirect(reverse('nb_webapp:success_signup', args=(success_message)))
+        return render(request, 'Temp/welcome.html', {'success_message': success_message})
 
 def nb_login(request): # Use the django authentication tool
     post_account_email = request.POST['account_email']

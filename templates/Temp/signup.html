@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NoahsBase Sign Up</title>
+    <title>NoahScope Sign Up</title>
 </head>
 <body>
-    <div align = "center">Welcome to NoahsBase</div>
+    <div align = "center">Welcome to NoahScope</div>
     <form action = "{% url 'nb_webapp:signup' %}" method = "post">
     {% csrf_token %}
         <p>Email Address: <input type="text" name="account_email"/></p>
