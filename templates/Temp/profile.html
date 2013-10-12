@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ profile.first_name }} {{ profile.last_name }}'s profile</title>
+</head>
+<body>
+    <p>{{ profile.first_name }} {{ profile.last_name }}'s profile</p>
+    <ul>
+        <li><p>Interests: {{ profile.interests }}</p></li>
+        <li><p>number of flowers: {{ profile.num_flowers}}</p></li>
+        <li><p>number of posts: {{ profile.num_posts }}</p></li>
+        <li><p>number of tags: {{ profile.num_tags }}</p></li>
+        <li><p>number of thumbs: {{ profile.num_thumbs }}</p></li>
+        <li><p>number of followings: {{ profile.num_followings }}</p></li>
+        <li><p>number of followers: {{ profile.num_followers }}</p></li>
+    </ul>
+
+    <!-- Display the knowledge card of the user -->
+
+
+    <a href = "{% url 'nb_webapp:home' %}">Home</a>
+</body>
+</html>

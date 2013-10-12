@@ -9,16 +9,15 @@ from nb_webapp.models import *
 from django.core.context_processors import csrf
 from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 #import oauth2 as oauth
 
 def home(request):
     # Fetch the user's information from request.user
-    #print(request.user.username)
     user = BasicInfo.objects.get(user=request.user)
     #print(user)
-    card_list_dict = {} # Dictionary for user_id-card_list mapping
+    card_list_dict = {}# Dictionary for user_id-card_list mapping
     following_id_list = []
     following_dict = {} # Dictionary for user_id-basic_info mapping
 
@@ -36,12 +35,6 @@ def home(request):
     return render(request, 'Temp/homepage.html',
                   {'CardsDict': card_list_dict,'FollowingDict': following_dict,
                    'FollowingIDList': following_id_list, 'user': user})
-
-
-def hello(request):
-    p = BasicInfo.objects.get(user_id=1);
-    return render(request, 'nb_webapp/liangruiTest.html',
-                  {'name': p.account_email, 'id': p.user_id})
 
 
 class IndexView(generic.ListView):
@@ -131,10 +124,8 @@ def nb_signup(request): # Use the django authentication tool
         qK = KnowledgeProfile(basic_info=qB, num_flowers=0, num_posts=0, num_tags=0, num_thumbs=0, num_followings=0, num_followers=0)
         qK.save()
         success_message = "Sign up successfully!"
-#        template = loader.get_template('Temp/welcome.html')
- #       context = RequestContext(request, {'success_message': success_message})
-        #return HttpResponseRedirect(reverse('nb_webapp:success_signup', args=(success_message)))
         return render(request, 'Temp/welcome.html', {'success_message': success_message})
+
 
 def nb_login(request): # Use the django authentication tool
     post_account_email = request.POST['account_email']
@@ -162,3 +153,29 @@ def nb_login(request): # Use the django authentication tool
     else:
         error_message = "Wrong account information!"
         return render(request, "Temp/welcome.html", {'error_message': error_message})
+
+
+def nb_logout(request):
+    logout(request)
+    success_message = "Welcome back soon!"
+    return render(request, "Temp/welcome.html", {'success_message': success_message})
+
+
+def nb_profile(request):
+    # obtain the user's profile
+    user_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
+    profile_dict = {}
+    profile_dict['first_name'] = request.user.first_name
+    profile_dict['last_name'] = request.user.last_name
+    profile_dict['interests'] = user_profile.interests
+    profile_dict['num_flowers'] = user_profile.num_flowers
+    profile_dict['num_posts'] = user_profile.num_posts
+    profile_dict['num_tags'] = user_profile.num_tags
+    profile_dict['num_thumbs'] = user_profile.num_thumbs
+    profile_dict['num_followings'] = user_profile.num_followings
+    profile_dict['num_followers'] = user_profile.num_followers
+    return render(request, 'Temp/profile.html', {'profile': profile_dict})
+
+
+def nb_post_card(request):
+    return "Post a card!"

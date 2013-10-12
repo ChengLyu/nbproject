@@ -8,7 +8,7 @@
 Latest Feeds:<br>
 <ul>
     {% for key,value in FollowingDict.items %}
-         {{ key }}-name:{{ value.last_name }}-{{ value.first_name }}:<br>
+         {{ key }}-name:{{ value.last_name }} {{ value.first_name }}:<br>
          {% for k,v in CardsDict.items%}
              {% ifequal key k %}
                 {% for card in v %}
@@ -19,5 +19,9 @@ Latest Feeds:<br>
          {% endfor %}
     {% endfor %}
 </ul>
+
+<a href = "Temp/post.html">Post a new knowledge card</a>
+<a href = "{% url 'nb_webapp:profile' %}">My Knowledge Profile</a>
+<a href = "{% url 'nb_webapp:logout' %}">Log out</a>
 </body>
 </html>

@@ -50,7 +50,7 @@ class WorkInfo(models.Model):
 
 # KnowledgeProfile Table
 class KnowledgeProfile(models.Model):
-    basic_info = models.ForeignKey(BasicInfo)
+    basic_info = models.OneToOneField(BasicInfo)
     interests = models.CharField(max_length=50, blank=True)
     num_flowers = models.PositiveIntegerField()
     num_posts = models.PositiveIntegerField()
