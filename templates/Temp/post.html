@@ -11,9 +11,11 @@
         <p>video_link: <input tpe = "url" name="video_link"></p>
         <p>source_link: <input type = "url" name="source_link"></p>
         <p>tags: <input type = "text" name="tags"></p>
-        <input type="submit" name="submit and go back" value="submit"/>
-        <input type="submit" name="submit and continue" value="submit_continue"/>
+        <input type="submit" name="Submit and go back" value="submit"/>
+        <input type="submit" name="Submit and continue" value="submit_continue"/>
         <input type="submit" name="Cancel" value="cancel"/>
     </form>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 </body>
 </html>

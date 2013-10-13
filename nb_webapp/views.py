@@ -10,8 +10,10 @@ from django.core.context_processors import csrf
 from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from datetime import datetime
 
 #import oauth2 as oauth
+
 
 def home(request):
     # Fetch the user's information from request.user
@@ -164,7 +166,7 @@ def nb_logout(request):
 def nb_profile(request):
     # obtain the user's profile
     user_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
-    profile_dict = {}
+    profile_dict = dict()
     profile_dict['first_name'] = request.user.first_name
     profile_dict['last_name'] = request.user.last_name
     profile_dict['interests'] = user_profile.interests
@@ -177,5 +179,49 @@ def nb_profile(request):
     return render(request, 'Temp/profile.html', {'profile': profile_dict})
 
 
+def nb_show_post(request):
+    return render(request, 'Temp/post.html')
+
+
 def nb_post_card(request):
-    return "Post a card!"
+    try:
+        submit1 = request.POST['Submit and go back']
+    except MultiValueDictKeyError:
+        try:
+            submit2 = request.POST['Submit and continue']
+        except MultiValueDictKeyError:
+            return HttpResponseRedirect(reverse('nb_webapp:home'))
+        title = request.POST['title']
+        contents = request.POST['contents']
+        if title == '' or contents == '':
+            error_message = "Please fill in the title and the contents form."
+            return render(request, "Temp/post.html", {'error_message': error_message})
+        video_link = request.POST['video_link']
+        source_link = request.POST['source_link']
+        tags = request.POST['tags']
+        user_basic_info = BasicInfo.objects.get(user_id=request.user.id)
+        user_knowledge_card = KnowledgeCard(basic_info=user_basic_info, title=title, contents=contents, video_link=video_link, source_link=source_link, tags=tags, num_thumbs=0, num_collects=0, num_shares=0, num_comments=0)
+        user_knowledge_card.post_date = datetime.now()
+        user_knowledge_card.save()
+        # Update knowledge profile
+        user_knowledge_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
+        user_knowledge_profile.num_posts = user_knowledge_profile.num_posts + 1
+        user_knowledge_profile.save()
+        return HttpResponseRedirect(reverse('nb_webapp:show_post'))
+    title = request.POST['title']
+    contents = request.POST['contents']
+    if title == '' or contents == '':
+        error_message = "Please fill in the title and the contents form."
+        return render(request, "Temp/post.html", {'error_message': error_message})
+    video_link = request.POST['video_link']
+    source_link = request.POST['source_link']
+    tags = request.POST['tags']
+    user_basic_info = BasicInfo.objects.get(user_id=request.user.id)
+    user_knowledge_card = KnowledgeCard(basic_info=user_basic_info, title=title, contents=contents, video_link=video_link, source_link=source_link, tags=tags, num_thumbs=0, num_collects=0, num_shares=0, num_comments=0)
+    user_knowledge_card.post_date = datetime.now()
+    user_knowledge_card.save()
+    # Update knowledge profile
+    user_knowledge_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
+    user_knowledge_profile.num_posts = user_knowledge_profile.num_posts + 1
+    user_knowledge_profile.save()
+    return HttpResponseRedirect(reverse('nb_webapp:home'))

@@ -20,7 +20,7 @@ Latest Feeds:<br>
     {% endfor %}
 </ul>
 
-<a href = "Temp/post.html">Post a new knowledge card</a>
+<a href = "{% url 'nb_webapp:show_post' %}">Post a new knowledge card</a>
 <a href = "{% url 'nb_webapp:profile' %}">My Knowledge Profile</a>
 <a href = "{% url 'nb_webapp:logout' %}">Log out</a>
 </body>

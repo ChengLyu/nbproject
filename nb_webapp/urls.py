@@ -13,6 +13,7 @@ urlpatterns = patterns('',
                        url(r'^page_signup', views.page_signup, name='page_signup'),
                        url(r'^signup', views.nb_signup, name='signup'),
                        url(r'^logout', views.nb_logout, name='logout'),
+                       url(r'^show_post', views.nb_show_post, name='show_post'),
                        url(r'^post_card', views.nb_post_card, name='post_card'),
                        url(r'^profile', views.nb_profile, name='profile'),
 )

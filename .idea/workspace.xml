@@ -2,29 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6632a8af-5980-45b1-8e3c-6249d24f3f46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Temp/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/noahboard/db.sqlite3" afterPath="$PROJECT_DIR$/noahboard/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Temp/homepage.html" afterPath="$PROJECT_DIR$/templates/Temp/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/models.py" afterPath="$PROJECT_DIR$/nb_webapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Temp/post.html" afterPath="$PROJECT_DIR$/templates/Temp/post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/urls.py" afterPath="$PROJECT_DIR$/nb_webapp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nb_webapp/views.py" afterPath="$PROJECT_DIR$/nb_webapp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nbproject.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381611488568" ignored="false" />
     <file path="/login.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381205186442" ignored="false" />
-    <file path="/post.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381558927885" ignored="false" />
+    <file path="/post.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381619070790" ignored="false" />
     <file path="/settings.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381389010275" ignored="false" />
-    <file path="/urls.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381558793623" ignored="false" />
-    <file path="/views.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381615848012" ignored="false" />
+    <file path="/urls.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381622674369" ignored="false" />
+    <file path="/views.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381623564210" ignored="false" />
     <file path="/loginsignup.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381264200614" ignored="false" />
     <file path="/signup_result.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381213502454" ignored="false" />
     <file path="/admin.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381269682622" ignored="false" />
-    <file path="/models.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381612409500" ignored="false" />
+    <file path="/models.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381621638019" ignored="false" />
     <file path="/welcome.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381529782156" ignored="false" />
-    <file path="/homepage.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381611744727" ignored="false" />
+    <file path="/homepage.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381622701276" ignored="false" />
     <file path="/signup.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381529726332" ignored="false" />
     <file path="/profile.html" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381616253246" ignored="false" />
     <file path="/fragment.py" changelist="6632a8af-5980-45b1-8e3c-6249d24f3f46" time="1381615212838" ignored="false" />
@@ -47,50 +45,16 @@
     <favorites_list name="nbproject" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5428907">
+    <splitter split-orientation="horizontal" split-proportion="0.66509986">
       <split-first>
         <leaf>
-          <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Temp/welcome.html">
+          <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="-5.4166665">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="70" column="0" selection-start="2608" selection-end="2608" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Temp/profile.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="51" selection-start="788" selection-end="788" vertical-scroll-proportion="-10.666667">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/Temp/post.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="7" selection-start="651" selection-end="651" vertical-scroll-proportion="0.7475083">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/Temp/homepage.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="33" selection-start="453" selection-end="453" vertical-scroll-proportion="-4.75">
-                  <folding />
+                <state line="209" column="67" selection-start="9056" selection-end="9056" vertical-scroll-proportion="0.2425876">
+                  <folding>
+                    <element signature="e#0#44#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -98,7 +62,7 @@
           <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/nb_webapp/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="36" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+                <state line="15" column="23" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -108,10 +72,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
+          <file leaf-file-name="welcome.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/Temp/welcome.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="179" column="26" selection-start="7550" selection-end="7550" vertical-scroll-proportion="0.9191375">
+                <state line="15" column="80" selection-start="444" selection-end="524" vertical-scroll-proportion="-9.208333">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/Temp/post.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="18" column="4" selection-start="721" selection-end="721" vertical-scroll-proportion="0.778098">
                   <folding />
                 </state>
               </provider>
@@ -144,11 +117,11 @@
         <option value="$PROJECT_DIR$/noahboard/settings.py" />
         <option value="$PROJECT_DIR$/templates/Temp/signup.html" />
         <option value="$PROJECT_DIR$/templates/Temp/welcome.html" />
-        <option value="$PROJECT_DIR$/nb_webapp/urls.py" />
-        <option value="$PROJECT_DIR$/templates/Temp/post.html" />
-        <option value="$PROJECT_DIR$/templates/Temp/homepage.html" />
-        <option value="$PROJECT_DIR$/nb_webapp/models.py" />
         <option value="$PROJECT_DIR$/templates/Temp/profile.html" />
+        <option value="$PROJECT_DIR$/nb_webapp/models.py" />
+        <option value="$PROJECT_DIR$/nb_webapp/urls.py" />
+        <option value="$PROJECT_DIR$/templates/Temp/homepage.html" />
+        <option value="$PROJECT_DIR$/templates/Temp/post.html" />
         <option value="$PROJECT_DIR$/nb_webapp/views.py" />
       </list>
     </option>
@@ -447,7 +420,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38952655" sideWeight="0.60856724" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3914328" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3914328" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32496306" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -524,16 +497,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nb_webapp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/django/contrib/staticfiles/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2371" selection-end="2371" vertical-scroll-proportion="0.72286373" />
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/django/core/handlers/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="267" column="0" selection-start="9012" selection-end="9012" vertical-scroll-proportion="0.7697368" />
@@ -569,52 +532,68 @@
         <state line="4" column="29" selection-start="60" selection-end="60" vertical-scroll-proportion="0.096" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Temp/welcome.html">
+    <entry file="file://$PROJECT_DIR$/templates/Temp/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="-5.4166665">
+        <state line="20" column="51" selection-start="788" selection-end="788" vertical-scroll-proportion="0.7111111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Gh/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nb_webapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2608" selection-end="2608" vertical-scroll-proportion="0.0">
+        <state line="159" column="0" selection-start="5592" selection-end="5592" vertical-scroll-proportion="0.8695652">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nb_webapp/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/Gh/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Temp/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="51" selection-start="788" selection-end="788" vertical-scroll-proportion="-10.666667">
+        <state line="1" column="16" selection-start="32" selection-end="32" vertical-scroll-proportion="0.043227665">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Temp/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="453" selection-end="453" vertical-scroll-proportion="-4.75">
+        <state line="21" column="0" selection-start="622" selection-end="622" vertical-scroll-proportion="0.8148148">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Temp/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="80" selection-start="444" selection-end="524" vertical-scroll-proportion="-9.208333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Temp/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="7" selection-start="651" selection-end="651" vertical-scroll-proportion="0.7475083">
+        <state line="18" column="4" selection-start="721" selection-end="721" vertical-scroll-proportion="0.778098">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nb_webapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="23" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nb_webapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="26" selection-start="7550" selection-end="7550" vertical-scroll-proportion="0.9191375">
-          <folding />
+        <state line="209" column="67" selection-start="9056" selection-end="9056" vertical-scroll-proportion="0.2425876">
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

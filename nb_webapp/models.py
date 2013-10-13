@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 # BasicInfo Table
 class BasicInfo(models.Model):
     #user_id = models.AutoField(primary_key=True)
@@ -106,7 +107,7 @@ class KnowledgeCard(models.Model):
     tags = models.CharField(max_length=50, blank=True)
     post_date = models.DateField()
     num_thumbs = models.PositiveIntegerField()
-    num_reposts = models.PositiveIntegerField()
+    num_collects = models.PositiveIntegerField()
     num_shares = models.PositiveIntegerField()
     num_comments = models.PositiveIntegerField()
     ACCESS_RIGHTS = (
@@ -117,6 +118,8 @@ class KnowledgeCard(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
 #UserProfile
 #class UserProfile(models.Model):
 #    basic_info = models.OneToOneField(BasicInfo)
@@ -131,7 +134,6 @@ class CommentInfo(models.Model):
     commentator_id = models.ForeignKey(BasicInfo)
     contents = models.CharField(max_length=100)
     post_date = models.DateField()
-    num_upvotes = models.PositiveIntegerField()
 
     def __unicode__(self):
         p = KnowledgeCard.objects.get(card_id = self.knowledge_card_id)
