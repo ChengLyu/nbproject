@@ -176,7 +176,13 @@ def nb_profile(request):
     profile_dict['num_thumbs'] = user_profile.num_thumbs
     profile_dict['num_followings'] = user_profile.num_followings
     profile_dict['num_followers'] = user_profile.num_followers
-    return render(request, 'Temp/profile.html', {'profile': profile_dict})
+
+    # Display the user's most recent 10 knowledge
+    user_knowledge_card_list = KnowledgeCard.objects.filter(basic_info_id=request.user.id).order_by('-post_date')
+    #for knowledge_card in user_knowledge_card_list:
+    #    print(knowledge_card.post_date)
+    user_knowledge_card_list = user_knowledge_card_list[:10]
+    return render(request, 'Temp/profile.html', {'profile': profile_dict, 'knowledge_card_list': user_knowledge_card_list})
 
 
 def nb_show_post(request):
@@ -205,7 +211,7 @@ def nb_post_card(request):
         user_knowledge_card.save()
         # Update knowledge profile
         user_knowledge_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
-        user_knowledge_profile.num_posts = user_knowledge_profile.num_posts + 1
+        user_knowledge_profile.num_posts += 1
         user_knowledge_profile.save()
         return HttpResponseRedirect(reverse('nb_webapp:show_post'))
     title = request.POST['title']
@@ -222,6 +228,6 @@ def nb_post_card(request):
     user_knowledge_card.save()
     # Update knowledge profile
     user_knowledge_profile = KnowledgeProfile.objects.get(basic_info_id=request.user.id)
-    user_knowledge_profile.num_posts = user_knowledge_profile.num_posts + 1
+    user_knowledge_profile.num_posts += 1
     user_knowledge_profile.save()
     return HttpResponseRedirect(reverse('nb_webapp:home'))

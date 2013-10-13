@@ -16,6 +16,12 @@
     </ul>
 
     <!-- Display the knowledge card of the user -->
+    <ul>
+        {% for knowledge_card in knowledge_card_list %}
+            title: {{ knowledge_card.title }} <br> Contents:{{ knowledge_card.contents }}
+                   <br>
+        {% endfor %}
+    </ul>
 
 
     <a href = "{% url 'nb_webapp:home' %}">Home</a>
